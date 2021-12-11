@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mar_stor/shared/bloc_observer.dart';
@@ -26,10 +24,11 @@ void main() async {
   bool isDark = CacheHelper.getData(key: 'isDark');
 
   Widget widget;
-   bool onBoarding = CacheHelper.getData(key: 'onBoarding');
-   token = CacheHelper.getData(key: 'token');
-   print(token);
-   uId = CacheHelper.getData(key: 'uId');
+  bool onBoarding = CacheHelper.getData(key: 'onBoarding');
+  token = CacheHelper.getData(key: 'token');
+  print(token);
+  uId = CacheHelper.getData(key: 'uId');
+  print(uId);
 
   if (onBoarding != null) {
     if (token != null)
@@ -67,18 +66,18 @@ class MyApp extends StatelessWidget {
             ..getFavorites()
             ..getUserData(),
         ),
-
       ],
       child: BlocConsumer<AppCubit, AppStates>(
         listener: (context, state) {},
         builder: (context, state) {
           return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme: lightTheme,
-            darkTheme: darkTheme,
-            themeMode: AppCubit.get(context).isDark ? ThemeMode.dark : ThemeMode.light,
-            home:startWidget
-          );
+              debugShowCheckedModeBanner: false,
+              theme: lightTheme,
+              darkTheme: darkTheme,
+              themeMode: AppCubit.get(context).isDark
+                  ? ThemeMode.dark
+                  : ThemeMode.light,
+              home: startWidget);
         },
       ),
     );
@@ -101,6 +100,4 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Container(),
     );
   }
-
-
 }
