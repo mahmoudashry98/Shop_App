@@ -1,4 +1,4 @@
-# mar_stor
+# shop App
  
 # Getting Started ...
 flutter e-Commerce application using Bloc, Dio, and shared preferences.
